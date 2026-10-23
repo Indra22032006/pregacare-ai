@@ -1,0 +1,82 @@
+PregaCare AI - Project File Guide
+
+This inventory describes the retained project source, documentation, and data
+files. The root .venv and an unrelated electric-vehicle CSV were removed during
+cleanup. The separate backend/venv was retained; its generated interpreter,
+installed packages, and package metadata are grouped below rather than listed
+individually. Empty .gitkeep files mark folders reserved for future work.
+
+Root files
+----------
+.env.example
+    Safe template for environment variables; copy to .env for local settings.
+
+AI_PROGRESS_ROADMAP.md
+    Current prototype capabilities, limitations, and proposed future stages.
+
+README.md
+    Project overview, setup/run instructions, API examples, and usage notes.
+
+explanation.txt
+    Plain-text explanation of the model, simulator, dashboards, API, and
+    prototype limitations.
+
+file-desc.txt
+    This inventory of all files retained in the project.
+
+Backend
+-------
+backend/main.py
+    FastAPI application: health and demo APIs, patient routes, dashboard
+    pages, and endpoints that call the maternal-risk model.
+
+backend/requirements.txt
+    Python runtime dependencies for the backend, including FastAPI, Uvicorn,
+    python-dotenv, Pydantic, and scikit-learn.
+
+backend/venv/ (generated environment; contents grouped)
+    Retained project-local Python environment containing the interpreter,
+    installed dependencies, and environment metadata. It is not application
+    source; the README explains how to recreate it.
+
+backend/api/.gitkeep
+    Keeps the currently empty folder reserved for API route modules.
+
+backend/config/.gitkeep
+    Keeps the currently empty folder reserved for application configuration.
+
+backend/database/.gitkeep
+    Keeps the currently empty folder reserved for database code.
+
+backend/ml/maternal_risk_model.py
+    Loads the maternal-health CSV, trains and evaluates a Random Forest,
+    provides risk predictions, and exposes model metrics.
+
+backend/models/.gitkeep
+    Keeps the currently empty folder reserved for data/Pydantic models.
+
+backend/rag/.gitkeep
+    Keeps the currently empty folder reserved for future retrieval-augmented
+    generation functionality.
+
+backend/services/.gitkeep
+    Keeps the currently empty folder reserved for business logic services.
+
+backend/simulator/sensor_simulator.py
+    Generates bounded, gradually changing synthetic patient readings and
+    simulated fall events for the demo dashboard.
+
+Data
+----
+data/knowledge_base/.gitkeep
+    Keeps the currently empty folder reserved for future RAG source documents.
+
+data/maternal_health/Maternal Health Risk Data Set.csv
+    Maternal-health feature records and risk labels used to train and evaluate
+    the Random Forest classifier.
+
+data/maternal_health/README.md
+    Documents the dataset source, columns, API usage, and medical limitations.
+
+data/synthetic_data/.gitkeep
+    Keeps the currently empty folder reserved for future generated datasets.

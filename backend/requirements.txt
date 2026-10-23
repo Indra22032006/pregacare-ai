@@ -1,0 +1,10 @@
+# --- Stage 1: core backend only ---
+# We add pandas, scikit-learn, chromadb, google-generativeai, etc.
+# in later stages, when we actually need them. Keeping this file
+# minimal for now makes install fast and errors easy to diagnose.
+
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-dotenv==1.0.1
+pydantic==2.12.5
+scikit-learn>=1.7.0
